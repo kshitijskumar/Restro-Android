@@ -1,9 +1,10 @@
 package com.example.restro.source.responses
 
+
 data class RestaurantDetails(
     val id: Long = 0L,
     val name: String? = null,
-    val priceForTwo: Double = 0.0,
+    val priceForTwo: Int = 1000,
     val locality: String? = null,
     val address: String? = null,
     val cuisine: List<String> = listOf(),

@@ -8,16 +8,16 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Path
+import retrofit2.http.Body
 
 interface ApiService {
 
     //get mapping here
-    suspend fun getRecommendedRestaurants(@Path("choice") userChoice: UserChoice) : Response<List<RestaurantDetails>>
+    suspend fun getRecommendedRestaurants(@Body userChoice: UserChoice) : Response<List<RestaurantDetails>>
     //this will contain a body of user preferences
 
     companion object {
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
+        private val loggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
         private val client = OkHttpClient.Builder()

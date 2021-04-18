@@ -10,7 +10,7 @@ data class UserChoice(
     val openSeating: Boolean = false, // true means strictly required otherwise no problem
     val djDance: Int = 1,
     val mainCourse: Boolean = false, //false means if even main course is present no problem, true means strictly needed
-    val priceForTwo: Int = 1000,
+    val priceForTwo: Int = 700,
     val cuisine: List<String> = listOf(),
-    val locality: String = "CP", //default value to be decided
+    val locality: String? = null, //default value to be decided
 )
